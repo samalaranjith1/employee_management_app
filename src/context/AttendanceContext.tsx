@@ -23,7 +23,7 @@ interface AttendanceContextType {
 
 const AttendanceContext = createContext<AttendanceContextType | undefined>(undefined);
 
-const API_URL = 'http://localhost:5001/api/attendance';
+const API_URL = `${import.meta.env.VITE_API_URL}/attendance`;
 
 export function AttendanceProvider({ children }: { children: ReactNode }) {
     const [todayRecord, setTodayRecord] = useState<AttendanceRecord | null>(null);

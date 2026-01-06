@@ -22,7 +22,7 @@ interface DocumentContextType {
 
 const DocumentContext = createContext<DocumentContextType | undefined>(undefined);
 
-const API_URL = 'http://localhost:5001/api/documents';
+const API_URL = `${import.meta.env.VITE_API_URL}/documents`;
 
 export function DocumentProvider({ children }: { children: ReactNode }) {
     const { user } = useAuth();

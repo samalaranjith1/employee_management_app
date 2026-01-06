@@ -22,7 +22,7 @@ interface EventContextType {
 
 const EventContext = createContext<EventContextType | undefined>(undefined);
 
-const API_URL = 'http://localhost:5001/api/events';
+const API_URL = `${import.meta.env.VITE_API_URL}/events`;
 
 export function EventProvider({ children }: { children: ReactNode }) {
     const { user } = useAuth();

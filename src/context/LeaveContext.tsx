@@ -24,7 +24,7 @@ interface LeaveContextType {
 
 const LeaveContext = createContext<LeaveContextType | undefined>(undefined);
 
-const API_URL = 'http://localhost:5001/api/leave';
+const API_URL = `${import.meta.env.VITE_API_URL}/leave`;
 
 export function LeaveProvider({ children }: { children: ReactNode }) {
     const { user } = useAuth();

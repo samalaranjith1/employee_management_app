@@ -20,7 +20,7 @@ export default function Dashboard() {
         const fetchStats = async () => {
             const token = localStorage.getItem('ems_token');
             try {
-                const res = await fetch('http://localhost:5001/api/dashboard/stats', {
+                const res = await fetch(`${import.meta.env.VITE_API_URL}/dashboard/stats`, {
                     headers: { Authorization: `Bearer ${token}` }
                 });
                 if (res.ok) setStats(await res.json());

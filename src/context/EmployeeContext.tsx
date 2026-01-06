@@ -5,7 +5,7 @@ import type { Employee, EmployeeContextType } from '../types/employee';
 const EmployeeContext = createContext<EmployeeContextType | undefined>(undefined);
 
 // Updated API URL to port 5001
-const API_URL = 'http://localhost:5001/api/employees';
+const API_URL = `${import.meta.env.VITE_API_URL}/employees`;
 
 export function EmployeeProvider({ children }: { children: ReactNode }) {
     const [employees, setEmployees] = useState<Employee[]>([]);

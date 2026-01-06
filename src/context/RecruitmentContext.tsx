@@ -48,7 +48,7 @@ interface RecruitmentContextType {
 
 const RecruitmentContext = createContext<RecruitmentContextType | undefined>(undefined);
 
-const API_URL = 'http://localhost:5001/api/recruitment';
+const API_URL = `${import.meta.env.VITE_API_URL}/recruitment`;
 
 export function RecruitmentProvider({ children }: { children: ReactNode }) {
     const { user } = useAuth();

@@ -37,7 +37,7 @@ interface PerformanceContextType {
 
 const PerformanceContext = createContext<PerformanceContextType | undefined>(undefined);
 
-const API_URL = 'http://localhost:5001/api/performance';
+const API_URL = `${import.meta.env.VITE_API_URL}/performance`;
 
 export function PerformanceProvider({ children }: { children: ReactNode }) {
     const { user } = useAuth();

@@ -44,7 +44,7 @@ interface PayrollContextType {
 
 const PayrollContext = createContext<PayrollContextType | undefined>(undefined);
 
-const API_URL = 'http://localhost:5001/api/payroll';
+const API_URL = `${import.meta.env.VITE_API_URL}/payroll`;
 
 export function PayrollProvider({ children }: { children: ReactNode }) {
     const { user } = useAuth();

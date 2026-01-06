@@ -38,7 +38,7 @@ export default function Careers() {
     useEffect(() => {
         const fetchJobs = async () => {
             try {
-                const res = await fetch('http://localhost:5001/api/recruitment/public/jobs');
+                const res = await fetch(`${import.meta.env.VITE_API_URL}/recruitment/public/jobs`);
                 if (res.ok) {
                     const data = await res.json();
                     setJobs(data);
@@ -82,7 +82,7 @@ export default function Careers() {
                 resumeUrl: 'https://example.com/mock-resume.pdf' // hardcoded for MVP
             };
 
-            const res = await fetch('http://localhost:5001/api/recruitment/public/apply', {
+            const res = await fetch(`${import.meta.env.VITE_API_URL}/recruitment/public/apply`, {
                 method: 'POST',
                 headers: { 'Content-Type': 'application/json' },
                 body: JSON.stringify(payload)
@@ -201,7 +201,7 @@ export default function Careers() {
 
                                                 const toastId = toast.loading('Parsing resume...');
                                                 try {
-                                                    const res = await fetch('http://localhost:5001/api/recruitment/public/upload-resume', {
+                                                    const res = await fetch(`${import.meta.env.VITE_API_URL}/recruitment/public/upload-resume`, {
                                                         method: 'POST',
                                                         body: formData
                                                     });
